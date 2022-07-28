@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 15px;
+        }
+        
+        .table-hideable td,
+        .table-hideable th {
+            width: auto;
+            transition: width .5s, margin .5s;
+        }
+        
+        .btn-condensed.btn-condensed {
+            padding: 0 5px;
+            box-shadow: none;
+        }
+        /* use class to have a little animation */
+        
+        .hide-col {
+            width: 0px !important;
+            height: 0px !important;
+            display: block !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+        }
+    </style>
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/buton.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="tables.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h2>đã đúng chưa</h2>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-condensed table-hover table-bordered table-striped table-hideable">
+
+                                <thead>
+                                    <tr>
+                                        <th class="hide-col">
+                                            <button class="pull-right btn btn-default btn-condensed show-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            STT
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+
+                                        <th>
+                                            Họ Tên
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th class="hide-col">
+                                        <th>
+                                            SĐT
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+
+                                        <th>
+                                            Giới tính
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 1
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 2
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 3
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 4
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 5
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 6
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                        <th>
+                                            Buổi 7
+                                            <button class="pull-right btn btn-default btn-condensed hide-column" data-toggle="tooltip" data-placement="bottom" title="Hide Column">
+          <i class="fa fa-eye-slash"></i>  
+        </button>
+                                        </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>Nguyễn Đức Hoàng Anh</td>
+                                        <td>9656xxxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select>
+                                        </td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                        <td>
+                                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                            <select style="width: 70px;">
+                                                    <option value="0" selected></option>
+                                                    <option value="1">Có phép</option>
+                                                    <option value="2">Không phép</option>
+                                                    <option value="3">Đi muộn</option>
+                                                </select></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td>Nguyễn Đức Cả</td>
+                                        <td>9657xxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>3</td>
+                                        <td>Nguyễn Thị Kim Dung</td>
+                                        <td>9658xxxxx</td>
+                                        <td>Nữ</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>4</td>
+                                        <td>Trần Thị Hoàng Diệu</td>
+                                        <td>9658xxxxx</td>
+                                        <td>Nữ</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>5</td>
+                                        <td>Bùi Thế Giang</td>
+                                        <td>9660xxxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>6</td>
+                                        <td>Đào Thị Hồng</td>
+                                        <td>9661xxxxx</td>
+                                        <td>Nữ</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>7</td>
+                                        <td>Nguyễn Duy Khánh</td>
+                                        <td>9662xxxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>8</td>
+                                        <td>Đặng Bảo Long</td>
+                                        <td>9663xxxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>9</td>
+                                        <td>Vũ Thị Mỹ</td>
+                                        <td>9664xxxxx</td>
+                                        <td>Nữ</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>10</td>
+                                        <td>Phan Văn Sáng</td>
+                                        <td>9665xxxxx</td>
+                                        <td>Nam</td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                        <td><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+                                    </tr>
+
+
+
+                                </tbody>
+                                <tfoot class="footer-restore-columns">
+                                    <tr>
+                                        <th colspan="4"><a class="restore-columns" href="#">Some columns hidden - click to show all</a></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Core plugin JavaScript-->
+    <!-- <script src="js/jquery.easing.min.js"></script> -->
+
+    <!-- Custom scripts for all pages-->
+    <!-- <script src="js/sb-admin-2.min.js"></script> -->
+
+    <!-- Page level plugins -->
+
+    <!-- Page level custom scripts -->
+    <!-- <script src="js/datatables-demo.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="js/buton.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

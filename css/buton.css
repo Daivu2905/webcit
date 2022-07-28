@@ -1,0 +1,12 @@
+.btn-toggle {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    outline: 0;
+    &[aria-expanded="true"] i {
+        transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+}
